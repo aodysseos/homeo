@@ -13,12 +13,12 @@
     "name": {
       "type": "string"
     },
-    "class_ids": {
+    "classIds": {
       "collection": "class"
     },
     "userClasses": {
-      "via": "classId",
-      "collection": "user-class"
+      "collection": "user-class",
+      "via": "classId"
     }
   }
 }

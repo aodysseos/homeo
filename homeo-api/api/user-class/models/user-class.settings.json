@@ -19,8 +19,8 @@
       "via": "UserClasses"
     },
     "classId": {
-      "model": "category",
-      "via": "userClasses"
+      "via": "userClasses",
+      "model": "category"
     }
   }
 }
