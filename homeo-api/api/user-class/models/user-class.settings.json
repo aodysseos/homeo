@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "user_classes",
+  "info": {
+    "name": "UserClass"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "userId": {
+      "type": "string"
+    },
+    "classId": {
+      "type": "string"
+    },
+    "bookingDate": {
+      "type": "datetime"
+    }
+  }
+}
