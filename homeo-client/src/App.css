@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+}
