@@ -14,11 +14,12 @@
       "type": "datetime"
     },
     "userId": {
-      "required": true,
-      "type": "biginteger"
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "instructorClasses"
     },
     "classId": {
-      "type": "biginteger"
+      "model": "class"
     }
   }
 }
