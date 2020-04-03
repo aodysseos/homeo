@@ -10,14 +10,17 @@
     "timestamps": true
   },
   "attributes": {
-    "userId": {
-      "type": "string"
-    },
-    "classId": {
-      "type": "string"
-    },
     "bookingDate": {
       "type": "datetime"
+    },
+    "userId": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "UserClasses"
+    },
+    "classId": {
+      "via": "userClasses",
+      "model": "category"
     }
   }
 }

@@ -12,6 +12,13 @@
   "attributes": {
     "name": {
       "type": "string"
+    },
+    "classIds": {
+      "collection": "class"
+    },
+    "userClasses": {
+      "collection": "user-class",
+      "via": "classId"
     }
   }
 }
