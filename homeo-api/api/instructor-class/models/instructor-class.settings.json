@@ -10,9 +10,6 @@
     "timestamps": true
   },
   "attributes": {
-    "createdDate": {
-      "type": "datetime"
-    },
     "sessionDate": {
       "type": "datetime"
     },
