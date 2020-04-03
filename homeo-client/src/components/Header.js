@@ -1,32 +1,37 @@
 import React from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Container = styled.section`
 	width: 100%;
-	min-height: 100px;
+	height: 100px;
 	display: flex;
 	flex-direction: row;
-	color: ${({ theme }) => theme.secondary};
-	background-color: ${({ theme }) => theme.primary};
+	color: ${({ theme, isTransparent }) => (isTransparent ? theme.primary : theme.secondary)};
+	background-color: ${({ theme, isTransparent }) => (isTransparent ? theme.secondary : theme.primary)};
 `
 const Wrapper = styled.div`
-	margin-left: 64px;
-	margin-right: 64px;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	padding: 2rem 0;
+	margin: 0 8rem;
 	max-width: none;
-	padding: 1.5rem .75rem;
+	border-bottom: 3px solid ${({ theme, isTransparent }) => (isTransparent ? theme.primary : 'transparent')};
 `
 
-const Logo = styled.div`
+const Logo = styled(Link)`
 	font-size: 2rem;
 	font-weight: 600;
 	text-transform: uppercase;
+	color: ${({ theme, isTransparent }) => (isTransparent ? theme.primary : theme.secondary)};
 `
 
-const Header = () => {
+const Header = ({ isTransparent }) => {
 	return (
-		<Container>
-			<Wrapper>
-				<Logo>{`Homeo`}</Logo>
+		<Container isTransparent={isTransparent}>
+			<Wrapper isTransparent={isTransparent}>
+				<Logo to="/" isTransparent={isTransparent}>{`Homeo`}</Logo>
 			</Wrapper>
 		</Container>
 	)

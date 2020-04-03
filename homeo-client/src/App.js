@@ -1,8 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components'
-import Layout from './components/Layout'
-import Header from './components/Header'
 
 import HomePage from './pages/Home'
 import InstructorsPage from './pages/Instructors'
@@ -22,7 +20,6 @@ const App = () => {
 		<Router>
 			<ThemeProvider theme={theme}>
 				<div className="App">
-					<Header />
 					<Switch>
 						<Route exact path="/">
 							<HomePage />

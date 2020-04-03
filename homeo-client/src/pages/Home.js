@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { Typography } from '@material-ui/core'
 
+import Header from '../components/Header'
 import Hero from '../components/Hero'
 
 const Container = styled.main`
@@ -12,6 +13,7 @@ const Container = styled.main`
 const Home = () => {
 	return (
 		<Container>
+			<Header />
 			<Hero />
 		</Container>
 	)

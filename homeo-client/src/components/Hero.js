@@ -29,23 +29,25 @@ const Title = styled(Typography)`
 `
 
 const SubTitle = styled(Typography)`
-  max-width: 900px;
+	max-width: 900px;
 `
 
 const ButtonsContainer = styled.ul`
 	width: 650px;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 	justify-content: space-between;
 	margin-top: 3rem;
+	> li {
+		width: 300px;
+		display: flex;
+	}
 	> li a {
 		color: ${({ theme }) => theme.secondary};
 	}
 `
 
 const StyledLink = styled(Link)`
-  width: 200px;
   font-size: 2rem;
   color: ${({ theme }) => theme.secondary};
   border: 3px solid ${({ theme }) => theme.secondary};
