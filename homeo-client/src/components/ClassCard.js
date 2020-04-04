@@ -98,7 +98,7 @@ const ClassCard = ({
 			/>
 			<CardMedia
 				className={classes.media}
-				image={`${process.env.REACT_APP_API_URL}${_get(image, '0.url')}`}
+				image={`${process.env.REACT_APP_API_URL}${_get(image, 'url')}`}
 				title={title}
 			/>
 			<CardContent>
