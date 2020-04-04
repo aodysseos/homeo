@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import { Typography } from '@material-ui/core'
+import _map from 'lodash/map'
 
 import Header from '../components/Header'
 import CategoryCard from '../components/CategoryCard'
@@ -22,32 +22,29 @@ const CardsWrapper = styled.div`
 `
 
 const Categories = () => {
+	const [ categories, setCategories ] = React.useState([])
+
+	React.useEffect(() => {
+		const fetchcategories = async () => {
+			await fetch(`${process.env.REACT_APP_API_URL}/categories`, {
+				methods: 'GET',
+				header: {
+					'Content-Type': 'application/json'
+				}
+			})
+				.then((response) => response.json())
+				.then((results) => {
+					setCategories(results)
+				})
+		}
+		fetchcategories()
+	}, [])
+
 	return (
 		<Container>
 			<Header isTransparent />
 			<Wrapper>
-				<CardsWrapper>
-					<CategoryCard
-						link={'categories/fitness'}
-						title={'Fitness'}
-						image={`https://source.unsplash.com/800x600/?yoga`}
-					/>
-					<CategoryCard
-						link={'categories/beauty'}
-						title={'Beauty'}
-						image={`https://source.unsplash.com/800x600/?beauty`}
-					/>
-					<CategoryCard
-						link={'categories/mentalhealth'}
-						title={'Mental health'}
-						image={`https://source.unsplash.com/800x600/?mental`}
-					/>
-					<CategoryCard
-						link={'categories/childrencorner'}
-						title={'Children corner'}
-						image={`https://source.unsplash.com/800x600/?children`}
-					/>
-				</CardsWrapper>
+				<CardsWrapper>{_map(categories, (category) => <CategoryCard {...category} />)}</CardsWrapper>
 			</Wrapper>
 		</Container>
 	)
