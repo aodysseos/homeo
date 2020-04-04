@@ -25,11 +25,11 @@ const Wrapper = styled.div`
 `
 
 const Title = styled(Typography)`
-  max-width: 700px;
+  max-width: 850px;
 `
 
 const SubTitle = styled(Typography)`
-	max-width: 900px;
+	max-width: 650px;
 `
 
 const ButtonsContainer = styled.ul`
@@ -60,11 +60,11 @@ const Hero = () => {
 		<Container>
 			<Wrapper>
 				<Title variant="h2" component="h1">
-					Streaming classes from the comfort of your home
+					Live classes <br /> from the comfort of your home
 				</Title>
 				<SubTitle variant="h5" component="h2">
-					Looking for a Yoga teacher? A hair stylist? Or someone to help you feel better? Explore classes and book a
-					livestreaming that'll get you feeling like your best self.
+					Looking for a Yoga teacher? A hair stylist? Or someone to help you that'll get you feel like your best self?
+					Explore classes and book a livestreaming today.
 				</SubTitle>
 				<ButtonsContainer>
 					<li>
