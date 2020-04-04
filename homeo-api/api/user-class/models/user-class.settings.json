@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "user_classes",
+  "info": {
+    "name": "UserClass"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "bookingDate": {
+      "type": "datetime"
+    },
+    "userId": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "UserClasses"
+    }
+  }
+}

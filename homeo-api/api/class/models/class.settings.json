@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "classes",
+  "info": {
+    "name": "Class"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text",
+      "required": true
+    },
+    "longDescription": {
+      "type": "text",
+      "required": true
+    },
+    "sessionDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "currency": {
+      "type": "string",
+      "required": true
+    },
+    "isFree": {
+      "type": "boolean",
+      "required": true
+    },
+    "amount": {
+      "type": "string"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "maximumStreamers": {
+      "type": "string"
+    },
+    "categoryId": {
+      "model": "category"
+    }
+  }
+}

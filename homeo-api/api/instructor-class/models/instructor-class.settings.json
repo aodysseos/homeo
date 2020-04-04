@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "instructor_classes",
+  "info": {
+    "name": "InstructorClass"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "sessionDate": {
+      "type": "datetime"
+    },
+    "userId": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "instructorClasses"
+    },
+    "classId": {
+      "model": "class"
+    }
+  }
+}
