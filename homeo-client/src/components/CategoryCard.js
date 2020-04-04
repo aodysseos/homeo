@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import _get from 'lodash/get'
 import { makeStyles } from '@material-ui/core/styles'
 import { Card, CardMedia, Typography } from '@material-ui/core'
 
@@ -43,15 +44,19 @@ const CardTitle = styled.div`
 	}
 `
 
-const ClassCard = ({ link, title, date, image, short_description, long_description }) => {
+const ClassCard = ({ id, slug, name, image }) => {
 	const classes = useStyles()
 	return (
-		<Link to={link}>
+		<Link to={`categories/${slug}`}>
 			<Card className={classes.root}>
-				<CardStyledMedia className={classes.media} image={image} title={title} />
+				<CardStyledMedia
+					className={classes.media}
+					image={`${process.env.REACT_APP_API_URL}/${_get(image, 'url')}`}
+					title={name}
+				/>
 				<CardTitle>
 					<Typography variant="h3" component="h3">
-						{title}
+						{name}
 					</Typography>
 				</CardTitle>
 			</Card>
