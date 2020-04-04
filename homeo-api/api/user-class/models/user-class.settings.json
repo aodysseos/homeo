@@ -17,10 +17,6 @@
       "plugin": "users-permissions",
       "model": "user",
       "via": "UserClasses"
-    },
-    "classId": {
-      "via": "userClasses",
-      "model": "category"
     }
   }
 }

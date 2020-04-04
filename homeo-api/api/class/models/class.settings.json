@@ -45,6 +45,9 @@
     },
     "maximumStreamers": {
       "type": "string"
+    },
+    "categoryId": {
+      "model": "category"
     }
   }
 }
