@@ -4,7 +4,8 @@ import styled, { ThemeProvider } from 'styled-components'
 
 import HomePage from './pages/Home'
 import InstructorsPage from './pages/Instructors'
-import EndusersPage from './pages/Endusers'
+import CategoriesPage from './pages/Categories'
+import ClassesListingPage from './pages/ClassesListing'
 
 import 'typeface-roboto'
 
@@ -24,11 +25,14 @@ const App = () => {
 						<Route exact path="/">
 							<HomePage />
 						</Route>
-						<Route path="/instructors">
+						<Route exact path="/instructors">
 							<InstructorsPage />
 						</Route>
-						<Route path="/classes">
-							<EndusersPage />
+						<Route exact path="/categories">
+							<CategoriesPage />
+						</Route>
+						<Route path="/categories/:id">
+							<ClassesListingPage />
 						</Route>
 					</Switch>
 				</div>

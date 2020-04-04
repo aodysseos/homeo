@@ -4,7 +4,7 @@ import { Typography } from '@material-ui/core'
 
 import Header from '../components/Header'
 
-const InstructorsPage = () => {
+const Instructors = () => {
 	return (
 		<>
 			<Header isTransparent />
@@ -15,4 +15,4 @@ const InstructorsPage = () => {
 	)
 }
 
-export default InstructorsPage
+export default Instructors

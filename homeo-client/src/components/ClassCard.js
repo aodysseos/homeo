@@ -20,9 +20,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
 
 const useStyles = makeStyles((theme) => ({
-	root: {
-		maxWidth: 345
-	},
+	root: {},
 	media: {
 		height: 0,
 		paddingTop: '56.25%' // 16:9
@@ -38,11 +36,11 @@ const useStyles = makeStyles((theme) => ({
 		transform: 'rotate(180deg)'
 	},
 	avatar: {
-		backgroundColor: red[500]
+		backgroundColor: `${({ theme }) => theme.primary}`
 	}
 }))
 
-const ClassCard = () => {
+const ClassCard = ({ title, date, image, short_description, long_description }) => {
 	const classes = useStyles()
 	const [ expanded, setExpanded ] = React.useState(false)
 
@@ -63,10 +61,10 @@ const ClassCard = () => {
 						<MoreVertIcon />
 					</IconButton>
 				}
-				title="Shrimp and Chorizo Paella"
+				title={title}
 				subheader="September 14, 2016"
 			/>
-			<CardMedia className={classes.media} image="/static/images/cards/paella.jpg" title="Paella dish" />
+			<CardMedia className={classes.media} image={image} title={title} />
 			<CardContent>
 				<Typography variant="body2" color="textSecondary" component="p">
 					This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of

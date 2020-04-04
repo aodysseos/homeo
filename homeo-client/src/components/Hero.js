@@ -71,7 +71,7 @@ const Hero = () => {
 						<StyledLink to="/instructors">Teach a class</StyledLink>
 					</li>
 					<li>
-						<StyledLink to="/classes">Find a class</StyledLink>
+						<StyledLink to="/categories">Find a class</StyledLink>
 					</li>
 				</ButtonsContainer>
 			</Wrapper>
