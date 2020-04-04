@@ -38,7 +38,7 @@
       "type": "string"
     },
     "image": {
-      "collection": "file",
+      "model": "file",
       "via": "related",
       "plugin": "upload",
       "required": false
@@ -48,6 +48,13 @@
     },
     "categoryId": {
       "model": "category"
+    },
+    "Instructor": {
+      "type": "string"
+    },
+    "InstructorInitials": {
+      "type": "string",
+      "maxLength": 2
     }
   }
 }

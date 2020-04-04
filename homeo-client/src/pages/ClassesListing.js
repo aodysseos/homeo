@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 	padding: 2rem 0;
 	margin: 0 8rem;
 `
-const CardsWrapper = styled.nav`
+const CardsWrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
