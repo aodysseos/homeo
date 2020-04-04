@@ -13,7 +13,8 @@ import {
 	Collapse,
 	Avatar,
 	IconButton,
-	Typography
+	Typography,
+	Button
 } from '@material-ui/core'
 
 import FavoriteIcon from '@material-ui/icons/Favorite'
@@ -39,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	avatar: {
 		backgroundColor: `${({ theme }) => theme.primary}`
+	},
+	bookButton: {
+		marginLeft: 'auto'
 	}
 }))
 
@@ -74,6 +78,8 @@ const ClassCard = ({
 		setExpanded(!expanded)
 	}
 
+	const handleBookClick = () => {}
+
 	return (
 		<Card className={classes.root}>
 			<CardHeader
@@ -92,7 +98,7 @@ const ClassCard = ({
 			/>
 			<CardMedia
 				className={classes.media}
-				image={`${process.env.REACT_APP_API_URL}/${_get(image, '0.url')}`}
+				image={`${process.env.REACT_APP_API_URL}${_get(image, '0.url')}`}
 				title={title}
 			/>
 			<CardContent>
@@ -115,7 +121,7 @@ const ClassCard = ({
 				<IconButton aria-label="share">
 					<ShareIcon />
 				</IconButton>
-				<IconButton
+				{/* <IconButton
 					className={clsx(classes.expand, {
 						[classes.expandOpen]: expanded
 					})}
@@ -124,13 +130,16 @@ const ClassCard = ({
 					aria-label="show more"
 				>
 					<ExpandMoreIcon />
-				</IconButton>
+				</IconButton> */}
+				<Button className={classes.bookButton} color="secondary" onClick={handleBookClick} aria-label="book">
+					Book
+				</Button>
 			</CardActions>
-			<Collapse in={expanded} timeout="auto" unmountOnExit>
+			{/* <Collapse in={expanded} timeout="auto" unmountOnExit>
 				<CardContent>
 					<Typography paragraph>{longDescription}</Typography>
 				</CardContent>
-			</Collapse>
+			</Collapse> */}
 		</Card>
 	)
 }
