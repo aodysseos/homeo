@@ -5,6 +5,7 @@ import _get from 'lodash/get'
 import _map from 'lodash/map'
 
 import Header from '../components/Header'
+import SearchBar from '../components/SearchBar'
 import ClassCard from '../components/ClassCard'
 
 const Container = styled.div``
@@ -47,6 +48,7 @@ const ClassesListing = ({ history, location, match }) => {
 		<Container>
 			<Header isTransparent />
 			<Wrapper>
+				<SearchBar />
 				<CardsWrapper>{_map(classes, (c) => <ClassCard {...c} />)}</CardsWrapper>
 			</Wrapper>
 		</Container>

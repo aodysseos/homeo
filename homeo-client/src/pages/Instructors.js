@@ -9,7 +9,7 @@ const Instructors = () => {
 		<>
 			<Header isTransparent />
 			<Typography variant="h2" component="h1">
-				Instructors
+				Coming soon, but not soon enought!
 			</Typography>
 		</>
 	)
