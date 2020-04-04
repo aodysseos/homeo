@@ -51,7 +51,7 @@ const ClassCard = ({ id, slug, name, image }) => {
 			<Card className={classes.root}>
 				<CardStyledMedia
 					className={classes.media}
-					image={`${process.env.REACT_APP_API_URL}/${_get(image, 'url')}`}
+					image={`${process.env.REACT_APP_API_URL}${_get(image, 'url')}`}
 					title={name}
 				/>
 				<CardTitle>
