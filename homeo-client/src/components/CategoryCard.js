@@ -1,18 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
-import clsx from 'clsx'
-import {
-	Card,
-	CardHeader,
-	CardMedia,
-	CardContent,
-	CardActions,
-	Collapse,
-	Avatar,
-	IconButton,
-	Typography
-} from '@material-ui/core'
+import { Card, CardMedia, Typography } from '@material-ui/core'
 
 import styled from 'styled-components'
 
