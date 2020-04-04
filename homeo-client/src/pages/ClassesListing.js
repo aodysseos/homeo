@@ -1,6 +1,8 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { Typography } from '@material-ui/core'
+import _get from 'lodash/get'
+import _map from 'lodash/map'
 
 import Header from '../components/Header'
 import ClassCard from '../components/ClassCard'
@@ -21,20 +23,31 @@ const CardsWrapper = styled.nav`
 	}
 `
 
-const ClassesListing = () => {
+const ClassesListing = ({ history, location, match }) => {
+	const { params } = match
+	const [ classes, setClasses ] = React.useState([])
+
+	React.useEffect(() => {
+		const fetchClasses = async () => {
+			await fetch(`${process.env.REACT_APP_API_URL}/classes?categoryId=${_get(params, 'id')}`, {
+				methods: 'GET',
+				header: {
+					'Content-Type': 'application/json'
+				}
+			})
+				.then((response) => response.json())
+				.then((results) => {
+					setClasses(results)
+				})
+		}
+		fetchClasses()
+	}, [])
+
 	return (
 		<Container>
 			<Header isTransparent />
 			<Wrapper>
-				<CardsWrapper>
-					<ClassCard title={'Yoga flow'} image={`https://source.unsplash.com/800x600/?yoga`} />
-					<ClassCard title={'Pilates'} image={`https://source.unsplash.com/800x600/?pilates`} />
-					<ClassCard title={'Yoga flow'} image={`https://source.unsplash.com/800x600/?yoga`} />
-					<ClassCard title={'Yoga flow'} image={`https://source.unsplash.com/800x600/?yoga`} />
-					<ClassCard title={'Yoga flow'} image={`https://source.unsplash.com/800x600/?yoga`} />
-					<ClassCard title={'Yoga flow'} image={`https://source.unsplash.com/800x600/?yoga`} />
-					<ClassCard title={'Yoga flow'} image={`https://source.unsplash.com/800x600/?yoga`} />
-				</CardsWrapper>
+				<CardsWrapper>{_map(classes, (c) => <ClassCard {...c} />)}</CardsWrapper>
 			</Wrapper>
 		</Container>
 	)

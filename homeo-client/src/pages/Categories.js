@@ -5,6 +5,8 @@ import _map from 'lodash/map'
 import Header from '../components/Header'
 import CategoryCard from '../components/CategoryCard'
 
+import { Typography } from '@material-ui/core'
+
 const Container = styled.div``
 
 const Wrapper = styled.div`
@@ -19,6 +21,11 @@ const CardsWrapper = styled.div`
 		margin-top: 2rem;
 		flex: 0 1 calc(32% - 1em);
 	}
+`
+
+const Title = styled(Typography)`
+	text-align: left;
+	color: ${({ theme }) => theme.primary};
 `
 
 const Categories = () => {
@@ -39,11 +46,13 @@ const Categories = () => {
 		}
 		fetchcategories()
 	}, [])
-
 	return (
 		<Container>
 			<Header isTransparent />
 			<Wrapper>
+				<Title variant="h4" component="h2">
+					Explore HOMEO
+				</Title>
 				<CardsWrapper>{_map(categories, (category) => <CategoryCard {...category} />)}</CardsWrapper>
 			</Wrapper>
 		</Container>

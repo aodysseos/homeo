@@ -1,6 +1,9 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import _get from 'lodash/get'
 import clsx from 'clsx'
+import moment from 'moment'
+import styled from 'styled-components'
+import { makeStyles } from '@material-ui/core/styles'
 import {
 	Card,
 	CardHeader,
@@ -39,7 +42,31 @@ const useStyles = makeStyles((theme) => ({
 	}
 }))
 
-const ClassCard = ({ title, date, image, short_description, long_description }) => {
+const CardDetails = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+	color: ${({ theme }) => theme.primary};
+`
+
+const Date = styled.div``
+
+const Amount = styled.div`text-transform: uppercase;`
+
+const ClassCard = ({
+	id,
+	title,
+	sessionDate,
+	currency,
+	isFree,
+	amount,
+	shortDescription,
+	longDescription,
+	image,
+	categoryId
+}) => {
 	const classes = useStyles()
 	const [ expanded, setExpanded ] = React.useState(false)
 
@@ -52,7 +79,7 @@ const ClassCard = ({ title, date, image, short_description, long_description }) 
 			<CardHeader
 				avatar={
 					<Avatar aria-label="recipe" className={classes.avatar}>
-						R
+						OP
 					</Avatar>
 				}
 				action={
@@ -61,13 +88,24 @@ const ClassCard = ({ title, date, image, short_description, long_description }) 
 					</IconButton>
 				}
 				title={title}
-				subheader="September 14, 2016"
+				subheader={''}
 			/>
-			<CardMedia className={classes.media} image={image} title={title} />
+			<CardMedia
+				className={classes.media}
+				image={`${process.env.REACT_APP_API_URL}/${_get(image, '0.url')}`}
+				title={title}
+			/>
 			<CardContent>
+				<CardDetails>
+					<Date variant="body2" color="textSecondary" component="p">
+						{moment(sessionDate).format('M	MMMM YYYY	 h:MM a')}
+					</Date>
+					<Amount variant="body2" color="textSecondary" component="p">
+						{!amount || isFree ? 'free' : `${currency}${amount}`}
+					</Amount>
+				</CardDetails>
 				<Typography variant="body2" color="textSecondary" component="p">
-					This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of
-					frozen peas along with the mussels, if you like.
+					{shortDescription}
 				</Typography>
 			</CardContent>
 			<CardActions disableSpacing>
@@ -90,24 +128,7 @@ const ClassCard = ({ title, date, image, short_description, long_description }) 
 			</CardActions>
 			<Collapse in={expanded} timeout="auto" unmountOnExit>
 				<CardContent>
-					<Typography paragraph>Method:</Typography>
-					<Typography paragraph>
-						Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes.
-					</Typography>
-					<Typography paragraph>
-						Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high heat. Add chicken,
-						shrimp and chorizo, and cook, stirring occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp
-						to a large plate and set aside, leaving chicken and chorizo in the pan. Add pimentón, bay leaves, garlic,
-						tomatoes, onion, salt and pepper, and cook, stirring often until thickened and fragrant, about 10 minutes.
-						Add saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-					</Typography>
-					<Typography paragraph>
-						Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook without stirring,
-						until most of the liquid is absorbed, 15 to 18 minutes. Reduce heat to medium-low, add reserved shrimp and
-						mussels, tucking them down into the rice, and cook again without stirring, until mussels have opened and
-						rice is just tender, 5 to 7 minutes more. (Discard any mussels that don’t open.)
-					</Typography>
-					<Typography>Set aside off of the heat to let rest for 10 minutes, and then serve.</Typography>
+					<Typography paragraph>{longDescription}</Typography>
 				</CardContent>
 			</Collapse>
 		</Card>

@@ -25,13 +25,16 @@ const Logo = styled(Link)`
 	font-weight: 600;
 	text-transform: uppercase;
 	color: ${({ theme, isTransparent }) => (isTransparent ? theme.primary : theme.secondary)};
+	> img { width: 200px; }
 `
 
 const Header = ({ isTransparent }) => {
 	return (
 		<Container isTransparent={isTransparent}>
 			<Wrapper isTransparent={isTransparent}>
-				<Logo to="/" isTransparent={isTransparent}>{`Homeo`}</Logo>
+				<Logo to="/" isTransparent={isTransparent}>
+					<img src={`${process.env.PUBLIC_URL}/${isTransparent ? 'logo_color.png' : 'logo_white.png'}`} alt="logo" />
+				</Logo>
 			</Wrapper>
 		</Container>
 	)

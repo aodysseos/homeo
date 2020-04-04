@@ -47,7 +47,7 @@ const CardTitle = styled.div`
 const ClassCard = ({ id, slug, name, image }) => {
 	const classes = useStyles()
 	return (
-		<Link to={`categories/${slug}`}>
+		<Link to={`categories/${id}`}>
 			<Card className={classes.root}>
 				<CardStyledMedia
 					className={classes.media}

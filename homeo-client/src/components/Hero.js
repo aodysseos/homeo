@@ -43,6 +43,7 @@ const ButtonsContainer = styled.ul`
 		display: flex;
 	}
 	> li a {
+		width: 100%;
 		color: ${({ theme }) => theme.secondary};
 	}
 `
@@ -63,8 +64,8 @@ const Hero = () => {
 					Live classes <br /> from the comfort of your home
 				</Title>
 				<SubTitle variant="h5" component="h2">
-					Looking for a Yoga teacher? A hair stylist? Or someone to help you that'll get you feel like your best self?
-					Explore classes and book a livestreaming today.
+					Looking for a Yoga teacher? A hair stylist? Or someone to help you feel like your best self? Explore classes
+					and book a livestreaming today.
 				</SubTitle>
 				<ButtonsContainer>
 					<li>
