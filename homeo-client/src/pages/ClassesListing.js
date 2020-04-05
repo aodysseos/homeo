@@ -16,11 +16,10 @@ const Wrapper = styled.div`
 const CardsWrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: flex-start;
+	margin-left: -0.5rem;
 	> div {
-		margin-top: 2rem;
-		flex: 0 1 calc(32% - 1em);
+		flex: 0 1 30%;
+		margin: 1rem 1.65%;
 	}
 `
 
