@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import HomeoTeam from '../components/HomeoTeam'
 import Footer from '../components/Footer'
+import OurSupporters from '../components/OurSupporters'
 
 const Container = styled.main`
 	background-color: white;
@@ -17,6 +18,7 @@ const Home = () => {
 		<Container>
 			<Header />
 			<Hero />
+			<OurSupporters />
 			<HomeoTeam />
 			<Footer />
 		</Container>
