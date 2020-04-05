@@ -23,7 +23,9 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
 
 const useStyles = makeStyles((theme) => ({
-	root: {},
+	root: {
+		textAlign: 'left'
+	},
 	media: {
 		height: 0,
 		paddingTop: '56.25%' // 16:9
@@ -69,7 +71,10 @@ const ClassCard = ({
 	shortDescription,
 	longDescription,
 	image,
-	categoryId
+	categoryId,
+	link,
+	instructor,
+	instructorInitials
 }) => {
 	const classes = useStyles()
 	const [ expanded, setExpanded ] = React.useState(false)
@@ -78,14 +83,15 @@ const ClassCard = ({
 		setExpanded(!expanded)
 	}
 
-	const handleBookClick = () => {}
-
+	const handleBookClick = (link) => {
+		window.open(link, '_blank')
+	}
 	return (
 		<Card className={classes.root}>
 			<CardHeader
 				avatar={
 					<Avatar aria-label="recipe" className={classes.avatar}>
-						OP
+						{instructorInitials || 'OP'}
 					</Avatar>
 				}
 				action={
@@ -131,7 +137,12 @@ const ClassCard = ({
 				>
 					<ExpandMoreIcon />
 				</IconButton> */}
-				<Button className={classes.bookButton} color="secondary" onClick={handleBookClick} aria-label="book">
+				<Button
+					className={classes.bookButton}
+					color="secondary"
+					onClick={() => handleBookClick(link)}
+					aria-label="book"
+				>
 					Book
 				</Button>
 			</CardActions>
