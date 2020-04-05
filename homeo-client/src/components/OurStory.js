@@ -5,8 +5,8 @@ import { Typography } from '@material-ui/core'
 
 const Container = styled.section`
 	width: 100%;
-	min-height: 100vh;
 	margin-top: 100px;
+	margin-bottom: 100px;
 	display: flex;
 	justify-content: center;
 	align-items: top;
@@ -18,91 +18,128 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	> h1 {
+	max-width: 900px;
+	margin-bottom: 1.8rem;
+	color: ${({ theme }) => theme.dark};
+	h2 {
 		font-weight: 700;
-		margin-bottom: 1rem;
+		margin-top: 0;
+		margin-bottom: .8rem;
 	}
-`
-
-const Title = styled(Typography)`
-  max-width: 850px;
-`
-
-const SubTitle = styled(Typography)`
-	max-width: 650px;
-`
-
-
-const ButtonsContainer = styled.ul`
-	width: 80%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	margin-top: 3rem;
-	> li {
-		width: 20%;
-		display: flex;
+	h3 {
+		font-weight: 700;
+		margin-top: 4rem;
+		margin-bottom: 1.5rem;
 	}
-	> li a {
-		width: 100%;
+	p {
+		margin-bottom: 1.2rem;
+	}
+	ul {
+		margin-top: -0.8rem;
+		margin-bottom: 1.2rem;
+		max-width: 450px;
+	}
+	ul li {
+		font-weight: 600;
+		line-height: 1.1rem;
+		margin-bottom: 0.5rem;
+		color: ${({ theme }) => theme.dark};
+	}
+
+	a {
 		color: ${({ theme }) => theme.primary};
 	}
 `
 
-const StyledLink = styled(Link)`
-  font-size: 2rem;
-  color: ${({ theme }) => theme.secondary};
-  border: 3px solid ${({ theme }) => theme.secondary};
-  border-radius: .8rem;
-  padding: 1.5rem 3rem;
-`
-const Logo = styled(Link)`
-	font-size: 2rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	color: ${({ theme, isTransparent }) => (isTransparent ? theme.primary : theme.secondary)};
-	> img { width: 200px; }
+const Title = styled(Typography)`
+	display: flex;
+	align-items: center;
+	color: ${({ theme }) => theme.dark};	
 `
 
-const OurStory = () =>  {
+const OurStory = () => {
 	return (
 		<Container>
 			<Wrapper>
-				<Title variant="h2" component="h1">
+				<Title variant="h2" component="h2">
 					Our Story
 				</Title>
-				<SubTitle variant="h5" component="h2">
-					What is homeo (mporei na mpei to logo dame anti to "homeo")
-					Homeo is a platform that allows people to find virtual classes and join them from the comfort of their home. COVID-19 has changed the way we live and forced us to adapt to this new reality. People need to be healthy and happy while staying safe at home. Professionals need to keep their business running. Homeo will facilitate the means to bringing people and professionals together under one platform. Personal trainers, mental health professionals, hairdressers, storytellers and other professionals will be able to schedule virtual livestream classes at a day and time of their choice. People can use Homeo to browse a list of classes of the following categories (list of categories) and join them. A virtual meeting room will be created using the “Zoom” livestreaming service, and users can join the session by tapping the link that they will receive half-hour prior to the class’s start time. 
-
-
-					So far...
-
-					For the purposes of the two day hackathon we have tried to present our idea in a presentation(link) as well as in a video (link) and have an initial set up of the project. So far we’ve set up our database, our API and have managed to do several features on the website. What are the available features for the users? Keep on reading: 
-						<li>Scroll through list to find and select categories of interest</li>
-						<li>See classes for a given category</li>
-						<li>Book your spot at any session of your choice</li>
-						<li>Receive a Zoom link for joining the livestream session at the scheduled time</li>
-						<li>UI-wise we’ve added features we’d love to have in the future</li>
-
-
-						We have a lot in store for the future and we are more than happy to share our plans with you. Firstly, our MVP is not completed just yet.. So we’d love to get there first by implementing the following:
-						<li>Rating system for the livestream sessions</li>
-						<li>Registration/Login system for both professionals </li>
-						<li>Ability to follow live streamers and get notified when they schedule a new session</li>
-						<li>Ability to view a demo video before joining a session</li>
-						<li>Search for a category or an event</li>
-						<li>Credits system for both professionals - upon excellent performance on a session - as well as for users to keep them motivated for booking more classes</li>
-						<li>Show the currently running livestreams in a designated section</li>
-
-						And so much more…
-						We care about creating a community based live-streaming application that will enable people at home to stay active and have fun, whilst also helping the not so tech savvy professionals to become content creators for our platform, easily do livestream sessions and reach to a greater audience.
-
-				</SubTitle>
-
-				<SubTitle variant="h5" component="h2">
+				<Typography variant="body1" component="p">
+					More and more people everyday are working from home. The workplace is no longer the office space. The
+					situation we are facing today with COVID-19 suggest has also proved that this is possible and potentially,
+					inevitable. But satying home doesn't mean we have to drop all of our good habits. We still need to workout,
+					entertain ourself, educate our children and maybe ask for help every now and then. But most importantly, we
+					need to do all those things with people.
+				</Typography>
+				<Typography variant="body1" component="p">
+					Homeo's purpose is to become the platform that people can come together and enjoy living at home. We hope that
+					people will use the platform to book livestreaming classes. We want to ensure only high quality classes, thus,
+					we want to collaborate with professional instructors that will teach yoga, pilates and other home workouts.
+					Medical professionals that can hold Q&amp;A sessions to debug the myths around COVID-19. Storytellers that can
+					entertain our children and many many more.
+				</Typography>
+				<Title variant="h4" component="h3">
+					How it works
+				</Title>
+				<Typography variant="body1" component="p">
+					Easy! Just select one of our main categories and browse through a list of available classes. Ready for some
+					yoga? Just book your session and we will send you an email half-hour before your class with a link to a "Zoom"
+					meeting. Have your matt ready, your instructor and the rest of the class will join you!
+				</Typography>
+				<Title variant="h4" component="h3">
+					How far we got
+				</Title>
+				<Typography variant="body1" component="p">
+					After 2 days of coding like maniacs, we have the following:
+				</Typography>
+				<ul>
+					<li>Select a category of interest</li>
+					🚀
+					<li>Browse through a number of available classes</li>
+					🚀
+					<li>Click to book a class (that will pop a set Zoom conference that we've created)</li>
+					🚀
+					<li>A back-end infrastructure build using Strapi (Node.js, PostgreSQL) hosted in Heroku.</li>
+				</ul>
+				<Title variant="h4" component="h3">
 					The future
-				</SubTitle>
+				</Title>
+				<Typography variant="body1" component="p">
+					Rome was not build in a day, in fact, it was build in{' '}
+					<a target="_blank" href="https://graylinerome.com/blog/rome-wasnt-built-day">
+						1,010,450 days!
+					</a>{' '}
+					We are committed to do the following in less time than that.
+				</Typography>
+				<ul>
+					<li>User accounts with booked clasess and reminders.</li>
+					🚀
+					<li>Ability to pay for classes.</li>
+					🚀
+					<li>Receive a Zoom link for joining the livestream session at the scheduled time</li>
+					🚀
+					<li>Rating system for the livestream sessions</li>
+					🚀
+					<li>Ability to follow live streamers and get notified when they schedule a new session</li>
+					🚀
+					<li>Ability to view a demo video before joining a session</li>
+					🚀
+					<li>Search for a category or an event</li>
+					🚀
+					<li>Professionals/Instructors dasboard to setup and manage their classes.</li>
+					🚀
+					<li>
+						Credits system for both professionals - upon excellent performance on a session - as well as for users to
+						keep them motivated for booking more classes
+					</li>
+					🚀
+					<li>Show the currently running livestreams in a designated section</li>
+				</ul>
+				<Typography variant="body1" component="p">
+					And so much more... We care about creating a community based live-streaming platform that will keep people
+					active, entertain and happy, from home! And whilst doing that, to help the tech savvy professionals to become
+					content creators for our platform, win win! Now excuse while we are out saving the world!
+				</Typography>
 			</Wrapper>
 		</Container>
 	)
