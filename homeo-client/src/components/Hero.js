@@ -64,8 +64,8 @@ const Hero = () => {
 					Live classes <br /> from the comfort of your home
 				</Title>
 				<SubTitle variant="h5" component="h2">
-					Looking for a Yoga teacher? A hair stylist? Or someone to help you feel like your best self? Explore classes
-					and book a livestreaming today.
+					Looking for a Yoga teacher? A hair stylist, or just someone to help you feel like your best self and have fun? Explore classes
+					and book a livestream session today.
 				</SubTitle>
 				<ButtonsContainer>
 					<li>
