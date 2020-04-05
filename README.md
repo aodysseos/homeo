@@ -5,7 +5,9 @@ A Web App (MVP) developed for #hackthecrisis hackathon (hackcyprus) 2020. A plat
 
 The platform is build as a monorepo using React for the client site and [Strapi](https://strapi.io/) Node.js/PostgreSQL. Currently hosted on Heroku.
 
-[Demo](https://homeo-client.herokuapp.com)
+* [Demo](https://homeo-client.herokuapp.com)
+* [Video](https://vimeo.com/400306124)
+* [Presentation PDF](./homeo_presentation.pdf)
 
 
 # About
