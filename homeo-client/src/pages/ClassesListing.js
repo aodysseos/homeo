@@ -1,6 +1,5 @@
 import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
-import { Typography } from '@material-ui/core'
+import styled from 'styled-components'
 import _get from 'lodash/get'
 import _map from 'lodash/map'
 
@@ -18,13 +17,14 @@ const CardsWrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	align-items: flex-start;
 	> div {
 		margin-top: 2rem;
 		flex: 0 1 calc(32% - 1em);
 	}
 `
 
-const ClassesListing = ({ history, location, match }) => {
+const ClassesListing = ({ match }) => {
 	const { params } = match
 	const [ classes, setClasses ] = React.useState([])
 
@@ -49,7 +49,7 @@ const ClassesListing = ({ history, location, match }) => {
 			<Header isTransparent />
 			<Wrapper>
 				<SearchBar />
-				<CardsWrapper>{_map(classes, (c) => <ClassCard {...c} />)}</CardsWrapper>
+				<CardsWrapper>{_map(classes, (cls) => <ClassCard key={_get(cls, 'id')} {...cls} />)}</CardsWrapper>
 			</Wrapper>
 		</Container>
 	)
