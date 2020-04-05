@@ -66,17 +66,18 @@ const OurStory = () => {
 				</Title>
 				<Typography variant="body1" component="p">
 					More and more people everyday are working from home. The workplace is no longer the office space. The
-					situation we are facing today with COVID-19 suggest has also proved that this is possible and potentially,
-					inevitable. But satying home doesn't mean we have to drop all of our good habits. We still need to workout,
-					entertain ourself, educate our children and maybe ask for help every now and then. But most importantly, we
-					need to do all those things with people.
+					situation we are facing today with COVID-19 suggests that this is possible and potentially, inevitable. But
+					staying home doesn't mean we have to drop all of our good habits. We still need to workout, entertain
+					ourselves, educate our children and maybe ask for help every now and then. But most importantly, we need to do
+					all those things with people.
 				</Typography>
 				<Typography variant="body1" component="p">
 					Homeo's purpose is to become the platform that people can come together and enjoy living at home. We hope that
-					people will use the platform to book livestreaming classes. We want to ensure only high quality classes, thus,
-					we want to collaborate with professional instructors that will teach yoga, pilates and other home workouts.
-					Medical professionals that can hold Q&amp;A sessions to debug the myths around COVID-19. Storytellers that can
-					entertain our children and many many more.
+					people will use the platform to book livestreaming classes. We want to ensure only high quality classes are
+					delivered, thus, we want to collaborate with professional instructors that will teach yoga, pilates and other
+					home workouts. Medical professionals that can hold Q&amp;A sessions to debug the myths around COVID-19.
+					Professional nail artists that will provide tips on how to look your bestself whist at home. Storytellers that
+					can entertain our children and many many more.
 				</Typography>
 				<Title variant="h4" component="h3">
 					How it works
