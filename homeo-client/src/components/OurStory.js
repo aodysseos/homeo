@@ -136,9 +136,9 @@ const OurStory = () => {
 					<li>Show the currently running livestreams in a designated section</li>
 				</ul>
 				<Typography variant="body1" component="p">
-					And so much more... We care about creating a community based live-streaming platform that will keep people
-					active, entertain and happy, from home! And whilst doing that, to help the tech savvy professionals to become
-					content creators for our platform, win win! Now excuse while we are out saving the world!
+					And so much more... <br />We care about creating a community based live-streaming platform that will keep
+					people active, entertain and happy, from home! And whilst doing that, to help the tech savvy professionals to
+					become content creators for our platform, win win! <br /> Now excuse us while we are out saving the world!
 				</Typography>
 			</Wrapper>
 		</Container>
