@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
+import _get from 'lodash/get'
 import _map from 'lodash/map'
 
 import Header from '../components/Header'
@@ -17,6 +18,7 @@ const CardsWrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	align-items: flex-start;
 	> a {
 		margin-top: 2rem;
 		flex: 0 1 calc(32% - 1em);
@@ -46,6 +48,7 @@ const Categories = () => {
 		}
 		fetchcategories()
 	}, [])
+
 	return (
 		<Container>
 			<Header isTransparent />
@@ -53,7 +56,9 @@ const Categories = () => {
 				<Title variant="h4" component="h2">
 					Explore HOMEO
 				</Title>
-				<CardsWrapper>{_map(categories, (category) => <CategoryCard {...category} />)}</CardsWrapper>
+				<CardsWrapper>
+					{_map(categories, (category) => <CategoryCard key={_get(category, 'id')} {...category} />)}
+				</CardsWrapper>
 			</Wrapper>
 		</Container>
 	)

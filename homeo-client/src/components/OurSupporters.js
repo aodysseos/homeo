@@ -6,12 +6,12 @@ import { Typography } from '@material-ui/core'
 const Container = styled.section`
 	width: 100%;
 	min-height: 100vh;
-	margin-top: -100px;
+	margin-top: 100px;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	color: ${({ theme }) => theme.secondary};
-	background-color: ${({ theme }) => theme.primary};
+	align-items: top;
+	color: ${({ theme }) => theme.primary};
+	background-color: ${({ theme }) => theme.secondary};
 `
 
 const Wrapper = styled.div`
@@ -32,19 +32,20 @@ const SubTitle = styled(Typography)`
 	max-width: 650px;
 `
 
+
 const ButtonsContainer = styled.ul`
-	width: 650px;
+	width: 80%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	margin-top: 3rem;
 	> li {
-		width: 300px;
+		width: 20%;
 		display: flex;
 	}
 	> li a {
 		width: 100%;
-		color: ${({ theme }) => theme.secondary};
+		color: ${({ theme }) => theme.primary};
 	}
 `
 
@@ -55,29 +56,38 @@ const StyledLink = styled(Link)`
   border-radius: .8rem;
   padding: 1.5rem 3rem;
 `
+const Logo = styled(Link)`
+	font-size: 2rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: ${({ theme, isTransparent }) => (isTransparent ? theme.primary : theme.secondary)};
+	> img { width: 200px; }
+`
 
-const Hero = () => {
+const OurSupporters = () =>  {
 	return (
 		<Container>
 			<Wrapper>
 				<Title variant="h2" component="h1">
-					Live classes <br /> from the comfort of your home
+					Our Supporters
 				</Title>
 				<SubTitle variant="h5" component="h2">
-					Looking for a Yoga teacher? A hair stylist, or just someone to help you feel like your best self and have fun? Explore classes
-					and book a livestream session today.
-				</SubTitle>
+					
 				<ButtonsContainer>
 					<li>
-						<StyledLink to="/instructors">Teach a class</StyledLink>
+						<StyledLink to="https://www.humancapitalpro.com/">Human Capital Professional Education Ltd</StyledLink>
 					</li>
 					<li>
-						<StyledLink to="/categories">Find a class</StyledLink>
+						<StyledLink to="https://www.facebook.com/TBSYR/">The Ballet School Yiolanda Roupina</StyledLink>
+					</li>
+					<li>
+						<StyledLink to="https://www.facebook.com/MPote.Beauty.Studio/">Mpote Beauty Studio</StyledLink>
 					</li>
 				</ButtonsContainer>
+				</SubTitle>
 			</Wrapper>
 		</Container>
 	)
 }
 
-export default Hero
+export default OurSupporters

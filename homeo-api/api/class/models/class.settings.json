@@ -49,12 +49,15 @@
     "categoryId": {
       "model": "category"
     },
-    "Instructor": {
+    "instructor": {
       "type": "string"
     },
-    "InstructorInitials": {
+    "instructorInitials": {
       "type": "string",
       "maxLength": 2
+    },
+    "link": {
+      "type": "string"
     }
   }
 }
