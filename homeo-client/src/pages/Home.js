@@ -4,6 +4,8 @@ import { Typography } from '@material-ui/core'
 
 import Header from '../components/Header'
 import Hero from '../components/Hero'
+import HomeoTeam from '../components/HomeoTeam'
+import Footer from '../components/Footer'
 
 const Container = styled.main`
 	background-color: white;
@@ -15,6 +17,8 @@ const Home = () => {
 		<Container>
 			<Header />
 			<Hero />
+			<HomeoTeam />
+			<Footer />
 		</Container>
 	)
 }
