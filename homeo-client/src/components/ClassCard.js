@@ -102,11 +102,7 @@ const ClassCard = ({
 				title={title}
 				subheader={''}
 			/>
-			<CardMedia
-				className={classes.media}
-				image={`${process.env.REACT_APP_API_URL}${_get(image, 'url')}`}
-				title={title}
-			/>
+			<CardMedia className={classes.media} image={_get(image, 'url')} title={title} />
 			<CardContent>
 				<CardDetails>
 					<Date variant="body2" color="textSecondary" component="p">

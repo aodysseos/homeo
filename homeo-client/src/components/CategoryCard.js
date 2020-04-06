@@ -46,14 +46,11 @@ const CardTitle = styled.div`
 
 const ClassCard = ({ id, slug, name, image }) => {
 	const classes = useStyles()
+	console.log({ image })
 	return (
 		<Link to={`categories/${id}`}>
 			<Card className={classes.root}>
-				<CardStyledMedia
-					className={classes.media}
-					image={`${process.env.REACT_APP_API_URL}${_get(image, 'url')}`}
-					title={name}
-				/>
+				<CardStyledMedia className={classes.media} image={_get(image, 'url')} title={name} />
 				<CardTitle>
 					<Typography variant="h3" component="h3">
 						{name}
