@@ -12,6 +12,7 @@
 		"moment": "^2.24.0",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
+		"react-lazy-load-image-component": "^1.4.3",
 		"react-router-dom": "^5.1.2",
 		"react-scripts": "3.4.1",
 		"styled-components": "^5.0.1",
@@ -27,7 +28,15 @@
 		"extends": "react-app"
 	},
 	"browserslist": {
-		"production": [ ">0.2%", "not dead", "not op_mini all" ],
-		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	}
 }
